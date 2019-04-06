@@ -1,0 +1,113 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {font-family:'NanumGothic'; src: url('../font/nanum.ttf')};
+/* ---------------------------------------------------------------------------- */
+
+body {overflow-x: hidden; overflow-y: hidden;}
+.introduce_div {position:absolute; width: 100%; height: 100vh; display: none; z-index: 100; background-color: #000;}
+.nav-item {text-indent: -15px;}
+#canvas-1 {background: #fff}
+#canvas-2 {margin-top: -22px}
+#canvas-3 {margin-top: -22px}
+.card {background: #fff};
+
+/* card-columns cols-1 header */
+.card-columns.cols-1.header {column-count: 2 !important;}
+.breadcrumb.main_header {height: 200px;}
+	.cell_box {display: table; height: 185px;}
+	.cell{display: table-cell; vertical-align: middle; line-height: 25px;}
+
+.today_temp {width: 500px ;  height: 500px;}
+.today_weather {width: 240px !important; height: 240px;}
+
+.sky {position: absolute; }
+.now_sky {position: absolute; left: 0; right: 0; text-align: center; margin-top:50px; color: #fff;}
+.now_sky p {font-size: 18px; margin-top: 12px}
+.pop {position: absolute;}
+.pop_percent {position: absolute; left: 48px; right: 0; text-align: center; margin-top: 52%; font-size: 44px; color: #fff;}
+.reh_percent {position: absolute; left: 55px; right: 0; text-align: center; margin-top: 50%; font-size: 38px; color: #fff;}
+
+.now_temp {text-align: center; font-size: 85px; margin-top: 125px}
+
+.today_ws, .today_wdKor {position: absolute; left: 0; right: 0; text-align: center; margin-top: 145px; color: #fff; font-size: 23px;}
+.ws,.wd {position: absolute; }
+
+.gi {position: absolute; width: 80%; height: 80%;}
+
+.main .container-fluid {padding:0; position: relative;}
+.card-columns.cols-1.header {padding-left: 20px;}
+
+.header_background {width: 100%; height: 600px; position: absolute; background:url(../img/bg.png) 0 0 repeat; top : -30px}
+.card.today_temp {background-color: transparent }
+.now_temp {font-size: 150px; color: #fff; font-family:'NanumGothic'; letter-spacing: -11.5px}
+.now_time {font-size: 30px; color: #fff; font-family: 'NanumGothic'; text-align: center; margin-top: 10px}
+.card.today_weather {background-color: rgba(255,255,255,.3); margin-left: 15px;}
+
+.card-body.pop {background: url(../img/precipitation.png) 60px 70px no-repeat}
+.card-body.reh {background: url(../img/humidity.png) 70px 65px no-repeat}
+.card-body.wind img{position: absolute; left: 0; right: 0; margin: 0 auto; margin-top: 62px;}
+.card-body.direction img{position: absolute; left: 60px; right: 0; margin: 0 auto; margin-top: 30px;}
+
+
+.chart-wrapper span {color: #fff; font-size: 23px;}
+.current_now {color: #fff;}
+
+.sky,.pop {color:#00008c; font-size: 19px}
+.ws,.wd {color: #00008c; font-size: 19px}
+.card-columns .card {margin-bottom: 1.5rem}
+
+.card-columns.cols-2 {margin-top: 60px;}
+
+@media (max-width : 1700px){
+	.card.today_temp {margin-top: 100px;	}
+	.card.today_weather {width: 200px; height: 240px; margin-left: 30px; margin-bottom: 1.5rem;}
+	.header_background {height: 835px;}
+}
+@media (max-width: 1400px) {
+
+	body {min-width: 1400px; overflow: auto;}
+  .cell {
+		width: 605px;
+	}
+}

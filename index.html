@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Weather graph</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_h.css?ver=5">
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <header class="app-header navbar">
+      <a class="navbar-brand" href="charts.html">
+        Weather
+      </a>
+      <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Users</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+      </ul>
+    </header>
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="nav-icon icon-speedometer"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-title">-</li>
+            <li class="nav-item nav-dropdown introduce" onclick="click_local('introduce')">
+              <a class="nav-link" href="#">
+                <i class="nav-icon icon-drop"></i>Introduce</a>
+            </li>
+            <li class="nav-title">Location</li>
+            <li class="nav-item nav-dropdown">
+            <li class="nav-item nav-dropdown seoul" onclick="click_local('seoul')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-cursor"></i>서울ㆍ경기도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('gangwon-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-pie-chart"></i>강원도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('chung-cheong-bukdo')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-star"></i>충청북도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('chungcheongnam-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-star"></i>충청남도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('jeollabuk-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-star"></i>전라북도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('jeollanam-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-star"></i>전라남도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('gyeongsangbuk-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-bell"></i>경상북도</a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('gyeongsangnam-do')">
+              <a class="nav-link nav-dropdown-toggle" href="#" >
+                <i class="nav-icon icon-calculator"></i>경상남도
+              </a>
+            </li>
+            <li class="nav-item nav-dropdown" onclick="click_local('jeju')">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-calculator"></i>제주도
+              </a>
+            </li>
+            <li class="divider"></li>
+
+            <li class="nav-item mt-auto">
+              <a class="nav-link nav-link-success" href="#" target="_top">
+                <i class="nav-icon icon-cloud-download"></i> 010 - 6766 - 4802</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-danger" href="#" target="_top">
+                <i class="nav-icon icon-layers"></i> Search Weather
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+      </div>
+      <main class="main">
+        <div class="introduce_div"></div>
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item">
+            <a href="#">Admin</a>
+          </li>
+          <li class="breadcrumb-item active">Dashboard</li>
+          <!-- Breadcrumb Menu-->
+          <li class="breadcrumb-menu d-md-down-none">
+            <div class="btn-group" role="group" aria-label="Button group">
+              <a class="btn" href="#">
+                <i class="icon-speech"></i>
+              </a>
+              <a class="btn" href="#">
+                <i class="icon-graph"></i>  Dashboard</a>
+              <a class="btn" href="#">
+                <i class="icon-settings"></i>  Settings</a>
+            </div>
+          </li>
+        </ol>
+        <div class="breadcrumb main_header">
+          <img src="" alt="" class="local_img">
+          <div class="cell_box">
+            <div class="cell">
+              <p class="wf"></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="container-fluid">
+          <div class="header_background"></div>
+          <div class="animated fadeIn">
+            <div class="card-columns cols-1 header" style="column-count:2">
+              <div class="card today_temp" >
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <p class="current_now"></p>
+                    <h2 class="now_temp"></h2>
+                    <p class="now_time">현재 ~ +3시간 기온</p>
+                  </div>
+                </div>
+              </div>
+        <!-- 기상청 rss wf말고 한글로 날씨 상태 나타나 있는거 가져오기 -->
+              <div class="card today_weather">
+                <div class="card-body">
+                  <div class="chart-wrapper" >
+                    <p class="sky">날씨상태</p>
+                    <h2 class="now_sky"></h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card today_weather">
+                <div class="card-body reh">
+                  <div class="chart-wrapper">
+                    <p class="pop">습도</p>
+                    <p class="reh_percent"></p>
+                    <canvas id="canvas-2" height="400px" width="300px"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card today_weather">
+                <div class="card-body pop">
+                  <div class="chart-wrapper">
+                    <p class="pop">강수확률</p>
+                    <p class="pop_percent"><span>%</span></p>
+                    <canvas id="canvas-3" height="400px" width="300px"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card today_weather">
+                <div class="card-body wind">
+                  <div class="chart-wrapper">
+                    <p class="ws">풍속</p>
+                    <img src="img/wind.png" alt="">
+                    <h2 class="today_ws"></h2>
+                    <!-- <canvas id="canvas-2"></canvas> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="card today_weather">
+                <div class="card-body direction">
+                  <div class="chart-wrapper">
+                    <p class="wd">풍향</p>
+                    <img src="img/windDirection.png" alt="">
+                    <h2 class="today_wdKor"></h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card today_weather">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                      <img src="img/gi.jpg" alt="" class="gi">
+                    <!-- <canvas id="canvas-2"></canvas> -->
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="card-columns cols-2" style="column-count:2">
+              <div class="card">
+                <div class="card-header">
+                  시간별 온도 차트그래프
+                  <div class="card-header-actions">
+                    <a href="http://www.chartjs.org" class="card-header-action" target="_blank">
+                      <small class="text-muted">docs</small>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-1"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" >
+                <div class="card-header">
+                  최대기온 최저기온 차트그래프
+                  <div class="card-header-actions">
+                    <a href="http://www.chartjs.org" class="card-header-action" target="_blank">
+                      <small class="text-muted">docs</small>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <div id="chart_div">
+                      <div id="btn-group">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+      </main>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="js/charts.js?ver=121"></script>
+    <script src="js/style.js?ver=32"></script>
+  </body>
+</html>
