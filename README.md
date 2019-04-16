@@ -1,1 +1,8 @@
-½Ã°£ ¿Âµµ ÃÖ°í¿Âµµ, ÃÖÀú¿Âµµ °­¼öÈ®·ü 12½Ã°£ ¿¹»óÀû¼³·® 12½Ã°£ ¿¹»ó °­¼ö·®
+## í”„ë¡œì íŠ¸
+ - ê¸°ìƒì²­ open API ë°ì´í„°ë¥¼ ì´ìš©í•˜ì—¬ UIë¡œ ë³´ê¸° ì‰½ê²Œ ë¿Œë ¤ì£¼ëŠ” ì• í”Œë¦¬ì¼€ì´ì…˜.
+ 
+ 
+ ## ê¸°ìˆ 
+  - html / css / javascript / jquery / ajax
+  - open api
+  - php
