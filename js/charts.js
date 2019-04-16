@@ -89,6 +89,12 @@ week_wf = "";
          local_img(click_local);
 
          },
+		 beforeSend:function(){
+        $('body').css('display','none');
+    },
+    complete:function(){
+        $('body').css('display','block');
+    },
          error: function (request, status, error) {
              console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
          }
@@ -137,7 +143,7 @@ function now_wdkor(){
 var gradient;
 function speedChart(){
 
-var speedCanvas = document.getElementById("canvas-1")
+var speedCanvas = document.getElementById("canvas-1");
 var context = speedCanvas.getContext('2d');
 context.rect(0, 0, speedCanvas.width, speedCanvas.height);
 gradient = context.createLinearGradient(0, 0, 0, 650);
