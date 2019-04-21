@@ -53,7 +53,7 @@ week_wf = "";
          url: './check_weather.php',
          data: {local:click_local},
          success: function (data) {
-           console.log(data);
+           
 
          for (var i = 0; i < 15; i++) {
            today_hour.push(data["weather_today"][i]["hour"][0]);
@@ -90,10 +90,10 @@ week_wf = "";
 
          },
 		 beforeSend:function(){
-        $('body').css('display','none');
+        $('.loading_background').css('display','block');
     },
     complete:function(){
-        $('body').css('display','block');
+        $('.loading_background').css('display','none');
     },
          error: function (request, status, error) {
              console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
@@ -102,7 +102,7 @@ week_wf = "";
 }
 
 function local_img(click_local){
-  console.log(click_local);
+  
   $(".local_img").attr('src','img/'+click_local+'.png');
 }
 
@@ -135,7 +135,7 @@ function now_ws(){
 }
 function now_wdkor(){
   $('.today_wdKor').html(today_wdKor[0]);
-  console.log(today_wdKor[0]);
+ 
 }
 
 
@@ -286,7 +286,7 @@ function week_chart(){
   google.charts.load('current', {'packages':['bar']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
-          console.log(week_tmn[0]);
+          
           var data = google.visualization.arrayToDataTable([
             ['날짜', '최저기온', '최고기온' ,{ role: 'style' }],
             [week_tmEf_split[0], week_tmn[0], week_tmx[0] , 'fill-color: #BC5679; fill-opacity: 0.2'], //일 , 최저기온 , 최고기온
