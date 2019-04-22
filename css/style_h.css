@@ -48,9 +48,8 @@ body {overflow-x: hidden; overflow-y: hidden;}
 .introduce_div {position:absolute; width: 100%; height: 100vh; display: none; z-index: 100; background-color: #000;}
 .nav-item {text-indent: -15px;}
 #canvas-1 {background: #fff}
-#canvas-2 {margin-top: -22px}
-#canvas-3 {margin-top: -22px}
-.card {background: #fff};
+.chart-wrapper canvas{width:inherit}
+.card {background: #fff}
 
 /* card-columns cols-1 header */
 .card-columns.cols-1.header {column-count: 2 !important;}
@@ -60,18 +59,18 @@ body {overflow-x: hidden; overflow-y: hidden;}
 		.cell{display: table-cell; vertical-align: middle; line-height: 25px; width: 800px;}
 
 .today_temp {width: 500px ;  height: 500px;}
-.today_weather {width: 240px !important; height: 240px;}
+.today_weather {height: 200px; width:200px;}
 
 .sky {position: absolute; }
-.now_sky {position: absolute; left: 0; right: 0; text-align: center; margin-top:50px; color: #fff;}
+.now_sky {position: absolute; left: 0; right: 0;  text-align: center; margin-top:35px; color: #fff;}
 .now_sky p {font-size: 18px; margin-top: 12px}
 .pop {position: absolute;}
-.pop_percent {position: absolute; left: 48px; right: 0; text-align: center; margin-top: 52%; font-size: 44px; color: #fff;}
+.pop_percent {position: absolute; left: 25px; right: 0; text-align: center; bottom:75px; font-size: 44px; color: #fff;}
 .reh_percent {position: absolute; left: 55px; right: 0; text-align: center; margin-top: 50%; font-size: 38px; color: #fff;}
 
 .now_temp {text-align: center; font-size: 85px; margin-top: 125px}
 
-.today_ws, .today_wdKor {position: absolute; left: 0; right: 0; text-align: center; margin-top: 145px; color: #fff; font-size: 23px;}
+.today_ws, .today_wdKor {position: absolute; left: 0; right: 0; text-align: center; margin-top: 120px; color: #fff; font-size: 23px;}
 .ws,.wd {position: absolute; }
 
 .gi {position: absolute; width: 80%; height: 80%;}
@@ -85,10 +84,11 @@ body {overflow-x: hidden; overflow-y: hidden;}
 .now_time {font-size: 30px; color: #fff; font-family: 'NanumGothic'; text-align: center; margin-top: 10px}
 .card.today_weather {background-color: rgba(255,255,255,.3); margin-left: 15px;}
 
-.card-body.pop {background: url(../img/precipitation.png) 60px 70px no-repeat}
-.card-body.reh {background: url(../img/humidity.png) 70px 65px no-repeat}
-.card-body.wind img{position: absolute; left: 0; right: 0; margin: 0 auto; margin-top: 62px;}
-.card-body.direction img{position: absolute; left: 60px; right: 0; margin: 0 auto; margin-top: 30px;}
+.card-body {padding:23px;}
+.card-body.pop {background: url(../img/precipitation.png) 40px 60px no-repeat}
+.card-body.reh {background: url(../img/humidity.png) 60px 45px no-repeat}
+.card-body.wind img{position: absolute; left: 0; right: 0; margin: 0 auto; margin-top: 45px;}
+.card-body.direction img{position: absolute; left: 60px; right: 0; margin: 0 auto; }
 
 
 .chart-wrapper span {color: #fff; font-size: 23px;}
@@ -117,10 +117,24 @@ body {overflow-x: hidden; overflow-y: hidden;}
     display: block;
 }
 
-/* .status_init {transition-duration : 0.5s} */
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.card-columns.cols-1.header{
+	width: 1000px;
+    margin: 0 auto;
+}
+
+
+
+
+/*미디어쿼리*/
+
 @media (max-width : 1700px){
 	.card.today_temp {margin-top: 100px;	}
-	.card.today_weather {width: 200px; height: 240px; margin-left: 30px; margin-bottom: 1.5rem;}
+	.card.today_weather {width: 200px; height: 200px; margin-left: 30px; margin-bottom: 1.5rem;}
 	.header_background {height: 835px;}
 }
 @media (max-width: 1400px) {
