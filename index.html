@@ -24,10 +24,7 @@
               </a>
             </li>
             <li class="nav-title">-</li>
-            <li class="nav-item nav-dropdown introduce" onclick="click_local('introduce')">
-              <a class="nav-link" href="#">
-                <i class="nav-icon icon-drop"></i>Introduce</a>
-            </li>
+            
             <li class="nav-title">Location</li>
             <li class="nav-item nav-dropdown">
             <li class="nav-item nav-dropdown seoul" onclick="click_local('seoul')">
@@ -87,20 +84,16 @@
         <div class="introduce_div"></div>
         <!-- Breadcrumb-->
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</li>
-          <li class="breadcrumb-item">
-            <a href="#">Admin</a>
-          </li>
-          <li class="breadcrumb-item active">Dashboard</li>
           <!-- Breadcrumb Menu-->
         </ol>
         <div class="breadcrumb main_header">
-          <img src="" alt="" class="local_img">
-          <div class="cell_box">
-            <div class="cell">
-              <p class="wf"></p>
-            </div>
-          </div>
+			
+				<img src="" alt="" class="local_img status_init">
+				  <div class="cell_box status_init">
+					<div class="cell">
+					  <p class="wf"></p>
+					</div>
+				  </div>		
 
         </div>
         <div class="container-fluid">
@@ -109,7 +102,7 @@
             <div class="card-columns cols-1 header" style="column-count:2">
               <div class="card today_temp" >
                 <div class="card-body">
-                  <div class="chart-wrapper">
+                  <div class="chart-wrapper status_init">
                     <p class="current_now"></p>
                     <h2 class="now_temp"></h2>
                     <p class="now_time">현재 ~ +3시간 기온</p>
@@ -220,9 +213,9 @@
       </main>
 
     </div>
-	<div class="loading_background">
-		
-	</div>
+		<div class="modal">
+			
+		</div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>

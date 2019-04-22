@@ -89,11 +89,16 @@ week_wf = "";
          local_img(click_local);
 
          },
-		 beforeSend:function(){
-        $('.loading_background').css('display','block');
+	beforeSend:function(){
+        
+		$(".modal").addClass("loading");
+		init_info("hide");
     },
     complete:function(){
-        $('.loading_background').css('display','none');
+        
+		$(".modal").removeClass("loading");
+		init_info("appear");
+		// $(".breadcrumb.main_header").css("top","100%");
     },
          error: function (request, status, error) {
              console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
@@ -315,4 +320,16 @@ function week_chart(){
           chart.draw(data, google.charts.Bar.convertOptions(options));
 
         }
+}
+
+function init_info(status){
+	console.log("ss");
+	if(status === "hide"){
+	$(".status_init").css({"margin-top":"20%","opacity":"0","transition-duration":"0.4s"});
+	} 
+	else if(status === "appear") {
+	$(".status_init").css({"margin-top":"0","opacity":"100"});
+	
+	}
+	
 }
